@@ -20,18 +20,18 @@ function NavBar() {
         <NavigationMenuList>
             <NavigationMenuItem>
             <Link to="/">
-                <Button variant="link" className="text-white text-2xl">Home</Button>
+                <Button variant="link" className="text-white text-2xl" tabIndex={-1}>Home</Button>
             </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
             <Link to="/otro">
-                <Button variant="link" className="text-white text-2xl">Otro</Button>
+                <Button variant="link" className="text-white text-2xl" tabIndex={-1}>Otro</Button>
             </Link>
             <Link to="/otro">
-                <Button variant="link" className="text-white text-2xl">Otro</Button>
+                <Button variant="link" className="text-white text-2xl" tabIndex={-1}>Otro</Button>
             </Link>
             <Link to="/otro">
-                <Button variant="link" className="text-white text-2xl">Otro</Button>
+                <Button variant="link" className="text-white text-2xl" tabIndex={-1}>Otro</Button>
             </Link>
             </NavigationMenuItem>
         </NavigationMenuList>
