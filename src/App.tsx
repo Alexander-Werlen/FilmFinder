@@ -5,8 +5,10 @@ import Home from "./components/home/Home.tsx"
 function App() {
 
   return (
-    <div className="container mx-auto">
-      <NavBar />
+    <div className="container mx-auto p-2">
+      <header>
+        <NavBar />
+      </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/otro" element={<p>Otro</p>} />

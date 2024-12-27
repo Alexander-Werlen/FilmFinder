@@ -11,12 +11,11 @@ import { Button } from "@/components/ui/button"
 function NavBar() {
 
   return (
-    <div className="flex py-4 fixed top-0 z-40">
+    <nav className="flex py-4 fixed top-0 z-40">
         <Link to="/">
-            <span className="text-white text-3xl font-bold">FILM</span>
-            <span className="text-white text-3xl font-bold">FINDER</span>
+            <span className="text-white text-3xl font-bold">FILMFINDER</span>
         </Link>
-        <NavigationMenu className="pl-16">
+        <NavigationMenu className="pl-16 hidden sm:block">
         <NavigationMenuList>
             <NavigationMenuItem>
             <Link to="/">
@@ -36,7 +35,7 @@ function NavBar() {
             </NavigationMenuItem>
         </NavigationMenuList>
         </NavigationMenu>
-    </div>
+    </nav>
   )
 }
 
