@@ -8,6 +8,8 @@ function Home() {
     <>
     <IntroductionSection />
     <TrendingSection />
+    <TrendingSection />
+    <TrendingSection />
     </>
   )
 }

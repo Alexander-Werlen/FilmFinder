@@ -76,4 +76,18 @@ body {
   background-attachment: fixed;
 }
 
+.bg-main-gradient {
+  background: linear-gradient(217deg, rgb(66, 0, 0), rgba(255,0,0,0) 100%),
+            linear-gradient(127deg, rgb(62, 0, 77), rgba(0,255,0,0) 100%),
+            linear-gradient(336deg, rgb(0, 0, 81), rgba(0,0,255,0) 100%);
+  background-attachment: fixed;
+}
+
+.bg-secondary-gradient {
+  background: linear-gradient(217deg, rgb(0, 44, 66), rgba(255,0,0,0) 100%),
+            linear-gradient(127deg, rgb(49, 0, 61), rgba(0,255,0,0) 100%),
+            linear-gradient(336deg, rgb(0, 0, 81), rgba(0,0,255,0) 100%);
+  background-attachment: fixed;
+}
+
 
