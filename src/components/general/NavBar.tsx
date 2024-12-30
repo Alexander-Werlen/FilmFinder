@@ -8,7 +8,6 @@ import {
 import {
     Sheet,
     SheetContent,
-    SheetDescription,
     SheetHeader,
     SheetTitle,
 } from "@/components/ui/sheet"
@@ -25,7 +24,7 @@ function NavBar() {
     const [navMenuIsOpen, setNavMenuIsOpen] = useState(false)
 
     return (
-    <div className="pt-2 sm:py-4 px-2 fixed top-0 z-40 w-screen bg-main-gradient ">
+    <div className="pt-2 sm:py-4 px-2 fixed top-0 z-50 w-screen bg-main-gradient">
     <nav className="flex container mx-auto">
         <Link to="/">
             <span className="text-white text-3xl font-bold">FILMFINDER</span>
@@ -62,21 +61,21 @@ function NavBar() {
             <Sheet open={navMenuIsOpen} onOpenChange={setNavMenuIsOpen}>
                 <SheetContent side="left" className="w-[250px] bg-secondary-gradient border-black pt-3">
                     <SheetHeader>
-                        <SheetTitle className="text-white text-left">NAVIGATION MENU</SheetTitle>
+                        <SheetTitle className="text-white text-left pb-4">NAVIGATION MENU</SheetTitle>
                     </SheetHeader>
-                    <div className="w-full text-center py-4">
+                    <div className="w-full text-left py-4">
                         <Link to="/" onClick={() => setNavMenuIsOpen(false)}>
-                            <span className=" text-white text-xl">HOME</span>
+                            <span className=" text-white text-xl underline underline-offset-4">HOME</span>
                         </Link>
                     </div>
-                    <div className="w-full text-center py-4">
+                    <div className="w-full text-left py-4">
                         <Link to="/otro" onClick={() => setNavMenuIsOpen(false)}>
-                            <span className=" text-white text-xl">OTRO</span>
+                            <span className=" text-white text-xl underline underline-offset-4">OTRO</span>
                         </Link>
                     </div>
-                    <div className="w-full text-center py-4">
+                    <div className="w-full text-left py-4">
                         <Link to="/otro" onClick={() => setNavMenuIsOpen(false)}>
-                            <span className=" text-white text-xl">OTRO</span>
+                            <span className=" text-white text-xl underline underline-offset-4">OTRO</span>
                         </Link>
                     </div>
                     

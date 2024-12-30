@@ -32,7 +32,7 @@ function IntroductionSection() {
             (status=="success") &&
             urls.map((url: string) => (
               <CarouselItem className="opacity-30 px-0 basis-11/12 sm:basis-1/2 md:basis-1/2 lg:basis-1/4" key={url}>
-                <img draggable="false" src={`https://image.tmdb.org/t/p/w500/${url}`} alt="" className="blur-sm"/>
+                <img draggable="false" src={`https://image.tmdb.org/t/p/w500/${url}`} alt="" className="blur-sm" width={400} height={240} loading="lazy"/>
               </CarouselItem>
             ))
           }

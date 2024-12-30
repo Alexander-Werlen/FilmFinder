@@ -6,5 +6,5 @@ export type MediaCardDataType = {
     poster_path: string,
     media_type: string,
     genres: Array<string>,
-    vote_average: string
+    vote_average: number
 }

@@ -10,6 +10,7 @@ function Home() {
     <TrendingSection />
     <TrendingSection />
     <TrendingSection />
+    <TrendingSection />
     </>
   )
 }

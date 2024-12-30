@@ -9,7 +9,7 @@ interface containsImages{
 
 export function getImagesUrlForHomeScroller(){
     return apiTMDB.get("trending/all/week").then(res => res.data.results).then(res => {
-        return res.map((content: containsImages) => content.backdrop_path)
+        return res.map((content: containsImages) => content.backdrop_path).slice(0, 5)
     })
 }
 
@@ -25,8 +25,8 @@ interface MediaDataApiType {
     vote_average: number
 }
 
-export function getTrendingMovies(): Promise<MediaCardDataType[]> {
-    return apiTMDB.get("trending/movie/week").then(res => res.data.results).then(res => {
+export function getTrendingMedia(): Promise<MediaCardDataType[]> {
+    return apiTMDB.get("trending/all/week").then(res => res.data.results).then(res => {
         return res?.map((data: MediaDataApiType) => {
             const genresStrings = getGenresByIds(data.genres)
             return {

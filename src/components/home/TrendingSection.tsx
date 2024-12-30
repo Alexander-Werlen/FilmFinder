@@ -1,12 +1,12 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel"
-import {getTrendingMovies} from "../../services/home"
+import {getTrendingMedia} from "../../services/home"
 import { useQuery } from "@tanstack/react-query"
 import { MediaCardDataType } from "@/types/mediaData"
 import MediaCard from "../general/MediaCard.tsx"
 import { Skeleton } from "../ui/skeleton.tsx"
 
 function IntroductionSection() {
-  const { status, data: trendingMoviesData } = useQuery({queryKey:["getTrendingMoviesData"], queryFn: getTrendingMovies})
+  const { status, data: trendingShowsData } = useQuery({queryKey:["getTrendingMoviesData"], queryFn: getTrendingMedia})
 
   return (
     <div className="pt-6 sm:pt-12">
@@ -22,7 +22,7 @@ function IntroductionSection() {
         <CarouselContent className="-ml-2">
           {
             (status=="success") &&
-            trendingMoviesData?.map((media: MediaCardDataType) => (
+            trendingShowsData?.map((media: MediaCardDataType) => (
               <CarouselItem className="basis-1/8 pl-2" key={media.id}>
                 <MediaCard data={media} />
               </CarouselItem>
@@ -36,8 +36,8 @@ function IntroductionSection() {
             ))
           }
         </CarouselContent>
-        <CarouselPrevious className="opacity-10 hover:opacity-100 left-4 h-16" variant="ghost"/>
-        <CarouselNext className="opacity-60 hover:opacity-100 absolute right-4 h-16"/>
+        <CarouselPrevious className="opacity-10 hover:opacity-100 absolute left-4 h-16 top-[150px]" variant="ghost"/>
+        <CarouselNext className="opacity-60 hover:opacity-100 absolute right-4 h-16 top-[150px]"/>
       </Carousel>
     </div>
   )
