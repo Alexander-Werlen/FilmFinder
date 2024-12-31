@@ -42,3 +42,39 @@ export function getTrendingMedia(): Promise<MediaCardDataType[]> {
         })
     })
 }
+
+export function getPopularMovies(): Promise<MediaCardDataType[]> {
+    return apiTMDB.get("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc").then(res => res.data.results).then(res => {
+        return res?.map((data: MediaDataApiType) => {
+            const genresStrings = getGenresByIds(data.genres)
+            return {
+                id: data.id,
+                title: data.title,
+                overview: data.overview,
+                backdrop_path: data.backdrop_path,
+                poster_path: data.poster_path,
+                media_type: "movie",
+                genres: genresStrings,
+                vote_average: data.vote_average
+            }
+        })
+    })
+}
+
+export function getPopularSeries(): Promise<MediaCardDataType[]> {
+    return apiTMDB.get("discover/tv?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc").then(res => res.data.results).then(res => {
+        return res?.map((data: MediaDataApiType) => {
+            const genresStrings = getGenresByIds(data.genres)
+            return {
+                id: data.id,
+                title: data.name,
+                overview: data.overview,
+                backdrop_path: data.backdrop_path,
+                poster_path: data.poster_path,
+                media_type: "tv",
+                genres: genresStrings,
+                vote_average: data.vote_average
+            }
+        })
+    })
+}

@@ -1,11 +1,11 @@
 
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { getMovieData } from "@/services/movies"
 import { useQuery } from "@tanstack/react-query"
 import { FaStar } from "react-icons/fa"
 import { useParams } from "react-router"
-import RecommendedSection from "./RecommendedMoviesSection"
+import RecommendedSection from "./RecommendedSeriesSection"
+import { getSerieData } from "@/services/series"
 
 
 function getStarColorByRating(rating: number): string {
@@ -16,10 +16,10 @@ function getStarColorByRating(rating: number): string {
   return "red"
 }
 
-function MovieDetails() {
+function SerieDetails() {
   const params = useParams()
 
-  const { status, data } = useQuery({queryKey:["getMovieData", params.id], queryFn: async () => await getMovieData(Number(params.id))})
+  const { status, data } = useQuery({queryKey:["getSerieData", params.id], queryFn: async () => await getSerieData(Number(params.id))})
 
   return (
     <>
@@ -42,7 +42,7 @@ function MovieDetails() {
               <FaStar size={20} color={getStarColorByRating(data.vote_average)} className="ml-6 mt-auto mb-1" />
               <span className="pl-1 text-white mt-auto text-xl font-bold">{data.vote_average.toFixed(1)}</span><span className=" mt-auto text-xl text-gray-300">/10</span>
             </div>
-            <p className="text-white">{data.release_date} | {Math.floor(data.runtime/60)}h {data.runtime%60}m</p>
+            <p className="text-white">{data.first_air_date}</p>
             <Separator className="mt-2"/>
             <h2 className="text-white text-md lg:text-xl font-bold">Overview</h2>
             <p className="text-white text-xs lg:text-sm xl:text-base max-w-[400px] lg:max-w-[600px] xl:max-w-[800px] ">{data.overview}</p>
@@ -65,4 +65,4 @@ function MovieDetails() {
   )
 }
 
-export default MovieDetails
+export default SerieDetails

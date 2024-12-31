@@ -1,12 +1,11 @@
-export type MovieDataType = {
+export interface SerieDataType {
     id: number,
     title: string,
     overview: string,
     backdrop_path: string,
     poster_path: string,
-    media_type: "movie",
+    media_type: "tv",
     genres: Array<{ id: number, name: string }>,
     vote_average: number,
-    release_date: string,
-    runtime: number
+    first_air_date: string,
 }
