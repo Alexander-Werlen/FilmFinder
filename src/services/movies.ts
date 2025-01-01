@@ -16,7 +16,7 @@ interface MovieDataApiType {
 }
 
 export function getMovieData(id: number): Promise<MovieDataType> {
-    return apiTMDB.get(`movie/${id}`).then(res => res.data).then((data:MovieDataApiType) => {
+    return apiTMDB.get(`movie/${id}?language=en-US`).then(res => res.data).then((data:MovieDataApiType) => {
         return {
             id: data.id,
             title: data.title,

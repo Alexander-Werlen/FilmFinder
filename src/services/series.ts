@@ -15,7 +15,7 @@ interface SerieDataApiType {
 }
 
 export function getSerieData(id: number): Promise<SerieDataType> {
-    return apiTMDB.get(`tv/${id}`).then(res => res.data).then((data:SerieDataApiType) => {
+    return apiTMDB.get(`tv/${id}?language=en-US`).then(res => res.data).then((data:SerieDataApiType) => {
         return {
             id: data.id,
             title: data.name,
