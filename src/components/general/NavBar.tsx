@@ -24,6 +24,7 @@ function NavBar() {
     const [navMenuIsOpen, setNavMenuIsOpen] = useState(false)
 
     return (
+    <header>
     <div className="pt-2 sm:py-4 px-2 fixed top-0 z-50 w-screen bg-main-gradient">
     <nav className="flex container mx-auto">
         <Link to="/">
@@ -37,18 +38,8 @@ function NavBar() {
             </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-            <Link to="/otro">
-                <Button variant="link" className="text-white text-2xl" tabIndex={-1}>Otro</Button>
-            </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-            <Link to="/otro">
-                <Button variant="link" className="text-white text-2xl" tabIndex={-1}>Otro</Button>
-            </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-            <Link to="/otro">
-                <Button variant="link" className="text-white text-2xl" tabIndex={-1}>Otro</Button>
+            <Link to="/search">
+                <Button variant="link" className="text-white text-2xl" tabIndex={-1}>Search</Button>
             </Link>
             </NavigationMenuItem>
         </NavigationMenuList>
@@ -69,23 +60,16 @@ function NavBar() {
                         </Link>
                     </div>
                     <div className="w-full text-left py-4">
-                        <Link to="/otro" onClick={() => setNavMenuIsOpen(false)}>
-                            <span className=" text-white text-xl underline underline-offset-4">OTRO</span>
+                        <Link to="/search" onClick={() => setNavMenuIsOpen(false)}>
+                            <span className=" text-white text-xl underline underline-offset-4">SEARCH</span>
                         </Link>
                     </div>
-                    <div className="w-full text-left py-4">
-                        <Link to="/otro" onClick={() => setNavMenuIsOpen(false)}>
-                            <span className=" text-white text-xl underline underline-offset-4">OTRO</span>
-                        </Link>
-                    </div>
-                    
-                    
-                    
                 </SheetContent>
             </Sheet>
         </div>
     </nav>
     </div>
+    </header>
     )
 }
 

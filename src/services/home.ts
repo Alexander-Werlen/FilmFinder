@@ -26,7 +26,7 @@ interface MediaDataApiType {
 }
 
 export function getTrendingMedia(): Promise<MediaCardDataType[]> {
-    return apiTMDB.get("trending/all/week").then(res => res.data.results).then(list => list.filter((media:MediaDataApiType) => media.vote_count > 500))
+    return apiTMDB.get("trending/all/week").then(res => res.data.results).then(list => list.filter((media:MediaDataApiType) => media.vote_count > 10))
     .then(res => {
         return res.map((data: MediaDataApiType) => {
             return {
