@@ -28,7 +28,7 @@ function NavBar() {
     <div className="pt-2 sm:py-4 px-2 fixed top-0 z-50 w-screen bg-main-gradient">
     <nav className="flex container mx-auto">
         <Link to="/">
-            <span className="text-white text-3xl font-bold">FILMFINDER</span>
+            <span className="text-white text-3xl font-bold">FILMSEARCH</span>
         </Link>
         <NavigationMenu className="pl-16 hidden sm:block">
         <NavigationMenuList>
