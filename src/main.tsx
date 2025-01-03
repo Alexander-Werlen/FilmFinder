@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from "react-router";
+import { HashRouter } from "react-router";
 import './index.css'
 import App from './App.tsx'
 
@@ -10,10 +10,10 @@ const queryClient = new QueryClient()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <QueryClientProvider client={queryClient}>
         <App />
       </QueryClientProvider>
-    </BrowserRouter>
+    </HashRouter>
   </StrictMode>,
 )
